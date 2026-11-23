@@ -1,6 +1,5 @@
-// ANCIENT TEMPLE EXPLORER - complete single-script Unity game (2D top-down).
-// Drop this file into any Unity project (Assets/Scripts). No scene setup, prefabs or art needed:
-// the game bootstraps itself on Play and builds the temple, sprites, UI and logic from code.
+// ANCIENT TEMPLE EXPLORER -
+
 using System.Collections.Generic;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
@@ -10,8 +9,7 @@ using UnityEngine.InputSystem;
 public class TempleGame : MonoBehaviour
 {
     // ---------------------------------------------------------------- LEVEL
-    // # wall   . floor   P start   K key   D locked door   S spider
-    // T spike trap   H Heart of Eternity   E exit (opens when you hold the Heart)
+ 
     static readonly string[] MAP =
     {
         "#####################",
@@ -95,7 +93,7 @@ public class TempleGame : MonoBehaviour
         BuildWorld();            // show the temple behind the menu
     }
 
-    // ---------------------------------------------------------------- SPRITES (generated, no assets)
+    // ---------------------------------------------------------------- SPRITES
     static Sprite Make(int n, System.Func<float, float, Color> f)
     {
         var tex = new Texture2D(n, n, TextureFormat.RGBA32, false);
@@ -632,7 +630,7 @@ public class TempleGame : MonoBehaviour
     }
 }
 
-// ---------------------------------------------------------------- INPUT (works with old and new Input System)
+// ---------------------------------------------------------------- INPUT 
 static class Inp
 {
     public static Vector2 Move()
